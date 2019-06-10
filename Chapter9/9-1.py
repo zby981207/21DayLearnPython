@@ -27,4 +27,4 @@ class PrimeIterator():
         raise StopIteration
 
 if __name__ == "__main__":
-    print(list(PrimeIterator(int(input("One more than end: ")))))
+    print(list(PrimeIterator(int(input("请输入数据: ")))))

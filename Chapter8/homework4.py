@@ -10,12 +10,12 @@ class Person:
         # Insturction that I can't understand
         # 分别输出这个人的年龄、体重是否达标（体重范围为身高-110+20，身高-110+20）
         self.age = datetime.datetime.now().year - self.bod.year
-        print("Person %s, %d year(s) old, is" % (self.name, self.age), end=" ")
+        print("%s, %d 岁, " % (self.name, self.age), end=" ")
         if self.weight < self.height -110+20:
-            print("healthy")
+            print("健康")
         else:
-            print("unhealthy") 
+            print("不健康")
 
 if __name__ == "__main__":
-    me = Person("Apollo", 123, 30, datetime.date(1234, 1, 23))
+    me = Person("郑博洋", 189, 85, datetime.date(1998, 12,7))
     me.isHealthy()

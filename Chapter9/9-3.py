@@ -1,21 +1,19 @@
-def generate(start, end = None, step=1):
-    if step == 0:
-        raise ValueError("step of generate must not be 0")
-    elif step > 0:
-        predicate = lambda lhs, rhs: lhs < rhs
-    else:
-        predicate = lambda lhs, rhs: lhs > rhs
-    
-    current = start
-    exit = end
-    if end == None:
-        current = 0
-        exit = start
-    
-    while predicate(current, exit):
-        yield current
-        current += step
+def my_range(start, end=0, step=1):
 
-if __name__ == "__main__":
-    import pdb
-    pdb.set_trace()
+    if step == 0:
+        raise ValueError("range() step argument must not be zero")
+
+    if not end and step > 0:
+        start, end = end, start
+
+        while start < end:
+            yield start
+            start += step
+    if step < 0 and start > end:
+
+        while start > end:
+            yield start
+            start += step
+
+for i in my_range(10, 4, -1 ):
+    print(i)
